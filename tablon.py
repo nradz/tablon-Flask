@@ -1,19 +1,20 @@
+# -*- coding: utf-8 -*-
 # Dos controladores con sus rutas y plantillas
 
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
-entradas = [ 'Aprendiendo Flask',
-'He encontrado un pen drive azul en la sala de estudios y lo he llevado a objetos perdidos',
-'HOYGAN, ALGUIEN SAVE KOMO JAQUEAR FLASK¿',
+entradas = [ 'Aprendiendo Flask.',
+'He encontrado un pen drive azul en la sala de estudios y lo he llevado a objetos perdidos.',
+u'HOYGAN, ALGUIEN SAVE KOMO JAQUEAR FLASK¿',
 'KDD en la Alfalfa. Que venga quien quiera.',
-'Apuntes de ADA en consigna. El archivo es ADA.zip y la contraseña es "rosa"'
+u'Apuntes de ADA en consigna. El archivo es ADA.zip y la contraseña es "rosa".',
 ]
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+	return render_template('index.html', entradas=entradas)
 
 @app.route('/about')
 def about():

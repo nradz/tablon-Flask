@@ -4,6 +4,8 @@
 	<title>Tablon hecho con Flask</title>
 </head>
 <body>
-	En construcción...
+	{% for entrada in entradas %}
+	<p>{{entrada}}</p>
+	{% endfor %}
 </body>
 </html>
