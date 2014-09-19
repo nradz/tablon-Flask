@@ -6,10 +6,10 @@
 <body>
 	{% for entrada in entradas %}
 	<li><p>{{ entrada[1] }}</p>
+		<a href="/post/{{ entrada[0] }}">Enlace</a>
 		{% if id == entrada[2] %}
 		<a href='/delete/{{ entrada[0] }}'>Borrar</a>
 		{% endif %}
-		{{ entrada[0] }}
 	</li>
 	{% endfor %}
 	
