@@ -4,9 +4,9 @@
 	<title>Tablon hecho con Flask</title>
 </head>
 <body>
-	<li><p>{{ entrada[0] }}</p>
-		{% if id == entrada[1] %}
-		<a href='/delete/{{ num }}'>Borrar</a>
+	<li><p>{{ entrada[1] }}</p>
+		{% if id == entrada[2] %}
+		<a href='/delete/{{ entrada[0]}}'>Borrar</a>
 		{% endif %}
 	</li>
 </body>
