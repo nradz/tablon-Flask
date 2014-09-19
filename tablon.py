@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Añadir nueva entrada
+# Ver entrada individualmente.
 
 from flask import Flask, render_template, request, redirect
 
@@ -21,6 +21,16 @@ def new():
 	text = request.form['text']
 	entradas.append(text)
 	return redirect('/')
+
+@app.route('/post/<int:num>')
+def post(num):
+	if num >= len(entradas):
+		entrada = "No existe dicha entrada."
+	else:
+		entrada = entradas[num]
+
+	return render_template('post.html', post=entrada)
+
 
 @app.route('/about')
 def about():
