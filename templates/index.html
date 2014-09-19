@@ -5,7 +5,11 @@
 </head>
 <body>
 	{% for entrada in entradas %}
-	<p>{{entrada}}</p>
+	<li><p>{{ entrada[0] }}</p>
+		{% if id == entrada[1] %}
+		<a href='/delete/{{ loop.index - 1 }}'>Borrar</a>
+		{% endif %}
+	</li>
 	{% endfor %}
 	
 	<form action='/new' method='post'>
