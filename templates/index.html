@@ -2,13 +2,14 @@
 <html>
 <head>
 	<title>Tablon hecho con Flask</title>
+	<link rel="stylesheet" href="/static/screen.css">
 </head>
 <body>
 	{% for entrada in entradas %}
-	<li><p>{{ entrada[1] }}</p>
-		<a href="/post/{{ entrada[0] }}">Enlace</a>
+	<li><p class="post">{{ entrada[1] }}</p>
+		<a class="post" href="/post/{{ entrada[0] }}">Enlace</a>
 		{% if id == entrada[2] %}
-		<a href='/delete/{{ entrada[0] }}'>Borrar</a>
+		<a class="post" href='/delete/{{ entrada[0] }}'>Borrar</a>
 		{% endif %}
 	</li>
 	{% endfor %}
