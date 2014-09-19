@@ -5,7 +5,7 @@
 </head>
 <body>
 	{% for entrada in entradas %}
-	<p>{{entrada}}</p>
+	<li><p>{{entrada}}</p><a href="/post/{{ loop.index - 1 }}">Enlace</a></li>
 	{% endfor %}
 	
 	<form action='/new' method='post'>
