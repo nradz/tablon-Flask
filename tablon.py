@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Dos controladores con sus rutas y plantillas
+# Añadir nueva entrada
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -15,6 +15,12 @@ u'Apuntes de ADA en consigna. El archivo es ADA.zip y la contraseña es "rosa".'
 @app.route('/')
 def index():
 	return render_template('index.html', entradas=entradas)
+
+@app.route('/new', methods = ['POST'])
+def new():
+	text = request.form['text']
+	entradas.append(text)
+	return redirect('/')
 
 @app.route('/about')
 def about():
